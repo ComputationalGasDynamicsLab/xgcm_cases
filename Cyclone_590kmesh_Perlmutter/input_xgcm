@@ -1,0 +1,155 @@
+&sml_param
+sml_use_pade=.true.
+sml_marker_temp_factor=1.5D0
+sml_machine=0             ! 0 circular, 1:D3D,
+sml_surf_file='geqdsk_gene_comp_case5_fix.eqd.flx.aif_xgcm'
+sml_f0_grid=.false.
+sml_pol_decomp=.true.
+sml_f0_grid_alpha=0.0000D0
+sml_co_cur_bt=.true.
+sml_special=0             ! 0: normal simulation, 1: single particle simulation
+sml_en_order_kev=2.25
+sml_dt=0.005D0            ! delta-t for one time step - unit of toroidal transit time.
+sml_mstep=10              ! total time step
+sml_deltaf=.true.        ! delta-f simulation switch - incomplete
+sml_turb_efield=.true.
+sml_electron_on=.false.
+sml_nphi_total=8
+sml_bounce=3              ! Particle motion boundary condition
+                          ! 1 for edge simulation (including open field line region)
+                          ! 2 for core simulation (excluding open field line region)
+sml_inpsi=0.00            ! inner boundary of simulation - unit of eq_x_psi
+sml_outpsi=0.90           ! outter boundary of simulation - unit of eq_x_psi
+sml_restart_write_period=1000
+sml_restart=.false.
+sml_deltaf_f0_mode=-2
+sml_guess_table_size=1000
+sml_00_efield=.false.
+sml_00_npsi=500
+sml_input_file_dir='.'
+sml_bd_ext_delta2=0.01
+sml_bd_ext_delta1=-0.1
+sml_bd_ext_delta1H=0.01
+sml_bd_ext_delta2H=0.02
+sml_bd_ext_delta3=0.02
+sml_bd_ext_delta4=0.04
+sml_bounce_zero_weight=1
+sml_rhomax=1.2D-2
+sml_grid_nrho=3
+sml_wedge_n=1
+sml_ncycle_half=10
+sml_f_source_period=10
+sml_source=.false.
+sml_no_fp_in_f=.false.
+sml_poisson_solver_type=1
+sml_iter_solver=.false.
+sml_dwdt_exb_only=.true.
+sml_initial_deltaf_noise=0D-150
+
+sml_grad_psitheta=.true.
+/
+
+&ptl_param
+ptl_mass_au=2D0             ! 1 for hydrogen, 2 for deutron
+ptl_charge_eu=1D0            ! ion charge
+ptl_num=20000000             ! number of particle for simulation
+ptl_maxnum=960000
+/
+
+
+&eq_param ! Initial equilibrium profile - Tanh profile
+eq_filename='geqdsk_gene_comp_case5_fix.eqd'
+eq_den_shape=-1
+eq_den_file='den_gene_case5.prf'
+eq_den_v1=3.0D19          ! inside value of density m^-3
+eq_den_v2=2.0D19           ! outside value of density  m^-3
+eq_den_x1=0.975D0      ! pedestal center
+eq_den_x2=0.05D0    ! pedestal width
+eq_den_v3=4.5D19
+eq_den_x3=0D0
+eq_tempi_shape=-1
+eq_tempe_shape=-1
+eq_tempi_file='temp_gene_case5_fix.prf'
+eq_tempe_file='temp_gene_case5_fix.prf'
+eq_tempi_x1=0.97D0
+eq_tempe_x1=0.97D0
+eq_tempi_x2=0.07D0
+eq_tempe_x2=0.07D0
+eq_tempi_v1=7D3      ! ion temperature (inside) - eV
+eq_tempi_v2=1d2     ! ion temperature (outside) - eV
+eq_tempe_v1=7D3
+eq_tempe_v2=1D2
+eq_tempi_v3=5.7D3
+eq_tempi_x3=0D0
+eq_tempe_v3=5.7D3
+eq_tempe_x3=0D0
+/
+
+&col_param  ! Collision
+col_mode=0  ! 0 : off , 1 monte-carlo (non-conserving) 2: monte-carlo (conserving)
+/
+
+&diag_param ! diagnosis
+diag_1d_period=10
+diag_f0_period=500
+diag_tracer_period=10000
+diag_3d_on=.true.
+/
+
+&neu_param            ! neutral collision
+neu_col_mode=0
+/
+
+&src_param
+src_narea=2
+src_period=10
+src_heat_power1=2.5D6
+src_pout1=0.05
+src_decay_width1=0.15
+src_pout2=0.90D0
+src_pin2=0.75D0
+src_decay_width2=0.06
+src_heat_power2=-2.5D6
+/
+
+&f0_param
+f0_nmu=31
+f0_nvp=15
+f0_smu_max=3.0
+f0_vp_max=3.0
+f0_col_change_weight=.false.
+f0_f_correction=.true.
+/
+
+&lim_param            ! limiter
+/
+
+/
+&smooth_param
+smooth_mode_in=0
+smooth_H_mode_in=2
+smooth_H_n_in=1
+smooth_r1_n_in=2
+smooth_r1_d0_in=0.0042
+smooth_r1_type_in=1
+smooth_diag_mode_in=-1
+/
+
+
+&prof_inparam
+/
+
+&mon_param
+/
+&adios_param
+/
+&ptb_3db_param
+/
+&coupling_param
+/
+&cce_phicoupling
+/
+&cce_fcoupling
+/
+&cce_surfaces
+/
