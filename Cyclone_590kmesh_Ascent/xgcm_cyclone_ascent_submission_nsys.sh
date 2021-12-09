@@ -1,12 +1,12 @@
 #!/bin/bash
 #BSUB -P GEN170
-#BSUB -W 0:10
+#BSUB -W 0:30
 #BSUB -nnodes 1
 #BSUB -J Cyclone-590k
 #BSUB -o Cyclone-590k.%J
 #BSUB -e Cyclone-590k.%J
 
-module load cuda/10.2.89
+module load cuda/11.0.2
 module load nsight-systems/2021.4.1.73
 
 date
