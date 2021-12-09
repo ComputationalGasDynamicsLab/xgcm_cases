@@ -11,10 +11,9 @@
 #SBATCH --job-name=Cyclone_590k
 
 module load PrgEnv-gnu
+module load cudatoolkit/21.9_11.4
 module load cpe-cuda
-module load cmake/3.20.5
-module load cuda/11.1.1
-
+module load cmake/3.22.0
 export SLURM_CPU_BIND="cores"
 
 srun ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
