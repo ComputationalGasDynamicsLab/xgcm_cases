@@ -6,6 +6,7 @@
 #BSUB -o Cyclone-590k.%J
 #BSUB -e Cyclone-590k.%J
 
+module load gcc/7.4.0
 module load cuda/11.0.2
 module load nsight-systems/2021.4.1.73
 export KOKKOS_PROFILE_LIBRARY=/ccsopen/home/zhangc20/xgcm/kokkos-tools/kp_nvprof_connector.so
