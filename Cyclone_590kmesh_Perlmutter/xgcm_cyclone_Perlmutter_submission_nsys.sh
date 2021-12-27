@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A ntrain9_g
+#SBATCH -A m499_g
 #SBATCH -C gpu
 #SBATCH -q regular
 #SBATCH -t 0:10:00
@@ -11,8 +11,10 @@
 #SBATCH --job-name=Cyclone_590k
 
 module load PrgEnv-gnu
-module load cudatoolkit/21.9_11.4
+module load systemlayer
+module load cuda/11.4.2
 module load cpe-cuda
+module load craype-accel-nvidia80
 module load cmake/3.22.0
 export KOKKOS_PROFILE_LIBRARY=/global/homes/z/zhangc20/xgcm/kokkos-tools/kp_nvprof_connector.so
 export SLURM_CPU_BIND="cores"
