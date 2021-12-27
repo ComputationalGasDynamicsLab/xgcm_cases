@@ -2,7 +2,7 @@
 #SBATCH -A m499_g
 #SBATCH -C gpu
 #SBATCH -q regular
-#SBATCH -t 0:05:00
+#SBATCH -t 0:10:00
 #SBATCH -n 8
 #SBATCH --ntasks-per-node=4
 #SBATCH -c 32
@@ -16,8 +16,11 @@ module load cuda/11.4.2
 module load cpe-cuda
 module load craype-accel-nvidia80
 module load cmake/3.22.0
+export KOKKOS_PROFILE_LIBRARY=/global/homes/z/zhangc20/xgcm/kokkos-tools/kp_nvprof_connector.so
 export SLURM_CPU_BIND="cores"
 
-srun ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
-1 1 bfs bfs 0 0 0 3 input_xgcm petsc petsc_xgcm.rc \
+srun ncu --target-processes all -f -o XGCm_profile_ncu_%q{SLURM_PROCID} \
+--nvtx --nvtx-include "gyroScatterEFF/" --set full \
+./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
+1 1 bfs bfs 0 0 0 3 input_xgcm_1step petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
