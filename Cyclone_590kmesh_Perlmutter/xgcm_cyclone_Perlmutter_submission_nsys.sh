@@ -20,7 +20,7 @@ export KOKKOS_PROFILE_LIBRARY=/global/homes/z/zhangc20/xgcm/kokkos-tools/kp_nvpr
 export SLURM_CPU_BIND="cores"
 
 srun /global/homes/z/zhangc20/nsight-systems-2021.5.1/bin/nsys \
-profile --stats=true \
+profile -o XGCm_profile_nsys_%q{SLURM_PROCID} -f true --stats=true \
 ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
 1 1 bfs bfs 0 0 0 3 input_xgcm petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0

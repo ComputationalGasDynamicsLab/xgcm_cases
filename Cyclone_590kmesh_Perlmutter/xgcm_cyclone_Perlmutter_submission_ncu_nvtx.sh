@@ -24,3 +24,13 @@ srun ncu --target-processes all -f -o XGCm_profile_ncu_%q{SLURM_PROCID} \
 ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
 1 1 bfs bfs 0 0 0 3 input_xgcm_1step petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
+
+
+# Belows are used to profile other GPU kernels
+#--nvtx --nvtx-include "gyroScatterEFF/" --set full \
+#--nvtx --nvtx-include "ion_push_op/" --set full \
+#--nvtx --nvtx-include "xgcm_scatterToMappedVerts/" --set full \
+#--nvtx --nvtx-include "gyroScatterEFF_cab/" --set full \
+#--nvtx --nvtx-include "savePtclPos/" --set full \
+
+# To profile multiple GPU kernels: use "kernel_A/*/kernel_B/*/kernel_C/"
