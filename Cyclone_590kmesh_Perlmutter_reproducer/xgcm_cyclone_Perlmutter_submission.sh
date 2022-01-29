@@ -19,10 +19,12 @@ export MPICH_ABORT_ON_ERROR=1
 ulimit -c unlimited
 ulimit -a
 
+date
 # below lines "-n - c, etc." are not needed, but jut keep it here in case
 # modifying this script to run in interactive mode.
-srun -n 8 -c 32 --gpus 4 --gpus-per-task 1 --ntasks-per-node=4 \
+srun -n 8 -c 32 --gpus 8 --gpus-per-task 1 --ntasks-per-node=4 \
 --gpu-bind=map_gpu:0,1,2,3 \
 ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
 1 1 bfs bfs 1 0 0 3 input_xgcm petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
+date
