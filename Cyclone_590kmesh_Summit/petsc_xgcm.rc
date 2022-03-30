@@ -13,8 +13,8 @@
 -ksp_max_it 1000
 
 # Specifiy Vec and Mat as Cuda type
-#-dm_vec_type cuda
-#-dm_mat_type aijcusparse
+-dm_vec_type cuda
+-dm_mat_type aijcusparse
 
 # general PETSc parameters
 -no_signal_handler
