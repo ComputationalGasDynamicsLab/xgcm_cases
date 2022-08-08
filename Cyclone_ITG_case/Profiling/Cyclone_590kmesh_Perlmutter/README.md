@@ -1,3 +1,4 @@
+#Note: Perlmutter compilation and run scripts are outdated; need to be updated. 
 On Perlmutter, compile with:
  - kokkos 3.4.01
  - gcc 9.3.0
