@@ -1,6 +1,6 @@
 #!/bin/bash
 #BSUB -P PHY122
-#BSUB -W 4:00
+#BSUB -W 2:00
 #BSUB -nnodes 2
 #BSUB -J Cyclone-590k
 #BSUB -o Cyclone-590k.%J

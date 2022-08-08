@@ -41,8 +41,7 @@ sml_ncycle_half=10
 sml_f_source_period=10
 sml_source=.false.
 sml_no_fp_in_f=.false.
-sml_poisson_solver_type=1
-sml_iter_solver=.false.
+sml_poisson_solver_type=0
 sml_dwdt_exb_only=.true.
 sml_initial_deltaf_noise=0D-150
 
