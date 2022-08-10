@@ -11,11 +11,9 @@
 #SBATCH --job-name=Cyclone_590k
 
 module load PrgEnv-gnu
-module load systemlayer
-module load cuda/11.4.2
-module load cpe-cuda
+module load cudatoolkit/11.7
 module load craype-accel-nvidia80
-module load cmake/3.22.0
+export SLURM_CPU_BIND="cores"
 export KOKKOS_PROFILE_LIBRARY=/global/homes/z/zhangc20/xgcm/kokkos-tools/kp_nvprof_connector.so
 export SLURM_CPU_BIND="cores"
 
