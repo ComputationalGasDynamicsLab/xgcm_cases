@@ -21,8 +21,8 @@ Refer to [XGCm build scripts](https://github.com/zhangchonglin/XGCm_build_script
 
 Weak scaling simulations are run on OLCF Summit system with:
 ```
- - 40 million particles per GPU
- - 5 time steps
+ - 25 million particles per GPU
+ - results averaged over 5 time steps
  - 64 poloidal planes
  - 24 mesh partitions per poloidal plane 
  - changing the number of MPI ranks within each group from 1 to 16 
