@@ -41,6 +41,7 @@ sml_f_source_period=10
 sml_source=.false.
 sml_no_fp_in_f=.false.
 sml_poisson_solver_type=0
+sml_iter_solver_niter=5
 sml_dwdt_exb_only=.true.
 sml_initial_deltaf_noise=0D-150
 
