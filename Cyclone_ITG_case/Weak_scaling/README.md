@@ -24,6 +24,7 @@ Weak scaling simulations are run on OLCF Summit system with:
  - 25 million particles per GPU
  - results averaged over 5 time steps
  - 64 poloidal planes
- - 24 mesh partitions per poloidal plane 
- - changing the number of MPI ranks within each group from 1 to 16 
+ - 12 or 24 mesh partitions per poloidal plane 
+ - the number of MPI ranks in each group is from 1 to 16 for 24 mesh partitions per poloidal plane case
+ - the number of MPI ranks in each group is from 1 to 32 for 12 mesh partitions per poloidal plane case 
 ```
