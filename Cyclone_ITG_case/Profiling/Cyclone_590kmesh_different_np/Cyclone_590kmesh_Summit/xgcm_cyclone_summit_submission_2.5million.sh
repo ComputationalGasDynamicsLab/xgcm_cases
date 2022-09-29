@@ -10,9 +10,9 @@ module load gcc/11.2.0
 module load cuda/11.5.2
 
 date
-jsrun -n 6 -a 1 -c 1 -g 1 --smpiargs "-gpu" \
+jsrun -n 8 -a 1 -c 1 -g 1 --smpiargs "-gpu" \
 ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
-1 1 bfs bfs 0 0 0 3 input_xgcm_np=2.5million petsc petsc_xgcm.rc \
+1 1 bfs bfs 1 0 0 3 input_xgcm_np=2.5million petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
 
 date

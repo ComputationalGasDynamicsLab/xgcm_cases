@@ -20,4 +20,4 @@ Note:
 
 Case run on 2 node of OLCF Summit system:
  - 8 GPUs used
- - number of ion particles per GPU: 1.25, 2.5, 5, 10, 20, 32, 40 millions for different case.
+ - number of ion particles per GPU: 1.25, 2.5, 5, 10, 20, 30 millions for different case.
