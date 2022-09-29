@@ -2,8 +2,8 @@
 #SBATCH -A m499
 #SBATCH -C gpu
 #SBATCH -q regular
-#SBATCH -t 0:05:00
-#SBATCH -n 8
+#SBATCH -t 0:60:00
+#SBATCH -n 48
 #SBATCH --ntasks-per-node=4
 #SBATCH -c 32
 #SBATCH --gpus-per-task=1
