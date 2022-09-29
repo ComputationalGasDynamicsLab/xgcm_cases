@@ -52,7 +52,7 @@ sml_grad_psitheta=.true.
 &ptl_param
 ptl_mass_au=2D0             ! 1 for hydrogen, 2 for deutron
 ptl_charge_eu=1D0            ! ion charge
-ptl_num=20000000             ! number of particle for simulation
+ptl_num=64000000             ! number of particle for simulation
 ptl_maxnum=960000
 /
 

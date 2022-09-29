@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A m499_g
+#SBATCH -A m499
 #SBATCH -C gpu
 #SBATCH -q regular
 #SBATCH -t 0:10:00
@@ -19,7 +19,7 @@ export SLURM_CPU_BIND="cores"
 srun ncu --target-processes all -f -o XGCm_profile_ncu_%q{SLURM_PROCID} \
 --nvtx --nvtx-include "gyroScatterEFF/" --set full \
 ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
-1 1 bfs bfs 0 0 0 3 input_xgcm_1step petsc petsc_xgcm.rc \
+1 1 bfs bfs 1 0 0 3 input_xgcm_1step petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
 
 
