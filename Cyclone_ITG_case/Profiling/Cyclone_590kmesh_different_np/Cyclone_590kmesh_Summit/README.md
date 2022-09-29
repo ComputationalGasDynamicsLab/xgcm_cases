@@ -1,10 +1,9 @@
-Note: Perlmutter compilation and run scripts are outdated; need to be updated. 
-On Perlmutter, compile with:
+On Summit, compile with:
 ```
  - kokkos 3.4.01
  - gcc 11.2.0
- - cuda 11.7
- - cmake 3.22
+ - cuda 11.5.2
+ - cmake 3.20.2
  - omega_h and pumi_pic master branch
  - PETSc 3.16.6
  - XGCm master branch

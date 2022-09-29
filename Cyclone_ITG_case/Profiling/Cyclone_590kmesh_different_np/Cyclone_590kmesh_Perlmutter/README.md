@@ -1,4 +1,3 @@
-Note: Perlmutter compilation and run scripts are outdated; need to be updated. 
 On Perlmutter, compile with:
 ```
  - kokkos 3.4.01
@@ -24,4 +23,4 @@ Note:
 
 Case run on 2 node of NERSC Perlmutter system:
  - 8 GPUs used
- - number of ion particles per GPU: 5, 10, 20, 40, 80, 120 millions for different case.
+ - number of ion particles per GPU: 5, 10, 20, 40, 80, 110 millions for different case.
