@@ -38,8 +38,6 @@ For 6 MPI ranks per group case, run with job submission script:
 ```
 
 ### Note for running with AmgX through AmgXWrapper and PETSc:
-- currently when run with `PETSc 3.15.2`, it is working fine, which requires
-  using `-dm_vec_type mpicuda` or `-dm_vec_type cuda`;
-- when run with `PETSc 3.16.6`, we need `-dm_vec_type mpi` and
-  `-dm_mat_type aij`, but the solver did not converge at all. This is likely
-  due to some compatibility issues between AmgX and new PETSc versioin.
+Currently when run with `PETSc 3.15.2` or `PETSc 3.16.6`, the simulation is working fine. However, only specific vector and matrix types within `PETSc` are working, need to use:
+  - `-dm_vec_type mpicuda` or `-dm_vec_type cuda`;
+  - and `-dm_mat_type aij`.
