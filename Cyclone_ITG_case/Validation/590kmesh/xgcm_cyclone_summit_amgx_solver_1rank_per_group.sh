@@ -13,7 +13,7 @@ date
 jsrun -n 8 -a 1 -c 1 -g 1 --smpiargs "-gpu" \
 ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
 1 1 bfs bfs 1 1 0 3 input_xgcm petsc petsc_xgcm.rc \
--use_gpu_aware_mpi 0 \
--mode AmgX_GPU -cfgFileName AmgX_SolverOptions_Classical.info
+-cfgFileName AmgX_SolverOptions_Classical.info \
+-use_gpu_aware_mpi 0 -dm_vec_type mpi -dm_mat_type aij \
 date
 
