@@ -36,3 +36,10 @@ For 6 MPI ranks per group case, run with job submission script:
 ```
 - xgcm_cyclone_summit_6ranks_per_group.sh
 ```
+
+## Note:
+- currently when run with AmgX, PETSc 3.15.2 is working fine, which requires
+  using `-dm_vec_type mpicuda`
+- when run with AmgX and PETSc 3.16.6, we need `-dm_vec_type mpi` and
+  `-dm_mat_type aij`, but the solver did not converge. So some issue with
+  AmgX and PETSc compatability.
