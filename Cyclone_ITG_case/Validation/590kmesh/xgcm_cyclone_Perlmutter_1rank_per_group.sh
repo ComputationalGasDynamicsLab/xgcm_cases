@@ -14,8 +14,11 @@ module load PrgEnv-gnu
 module load cudatoolkit/11.7
 module load craype-accel-nvidia80
 export SLURM_CPU_BIND="cores"
+export OMP_PLACES=cores
+export OMP_PROC_BIND=spread
+export OMP_NUM_THREADS=1
 ulimit -c unlimited
 
-srun ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
+srun ./XGCm 590kmesh.osh 590kmesh_6.cpn \
 1 1 bfs bfs 1 0 0 3 input_xgcm petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
