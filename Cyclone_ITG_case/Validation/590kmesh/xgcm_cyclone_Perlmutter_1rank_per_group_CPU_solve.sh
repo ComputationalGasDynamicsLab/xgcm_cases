@@ -19,6 +19,10 @@ export OMP_PROC_BIND=spread
 export OMP_NUM_THREADS=32
 ulimit -c unlimited
 
-srun ./XGCm 590kmesh.osh 590kmesh_6.cpn \
+srun ./XGCm_CPU 590kmesh.osh 590kmesh_6.cpn \
 1 1 bfs bfs 1 0 0 3 input_xgcm petsc petsc_xgcm.rc \
--use_gpu_aware_mpi 0
+-use_gpu_aware_mpi 0 -dm_vec_type mpi -dm_mat_type mpiaij
+
+# note: override default matrix and vector types in "petsc_xgcm.rc", and use
+# "mpi" and "mpiaij" types for vector and matrix through input arguments
+# "-dm_vec_type mpi -dm_mat_type mpiaij"

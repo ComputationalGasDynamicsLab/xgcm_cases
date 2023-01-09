@@ -42,3 +42,23 @@ Currently when run with `PETSc 3.15.2` or `PETSc 3.16.6`, the simulation is
  working fine. However, it requires specific types of `PETSc` vector and matrix type:
   - `-dm_vec_type cuda` or `-dm_vec_type mpicuda`;
   - and `-dm_mat_type aij` or `-dm_mat_type mpiaij`.
+
+### Note for running with enabling `OpenMP`.
+  - Currently, there is no `OpenMP` section in the code, the below enviroment
+     variable settings are just to be consistent when `OpenMP` is eanbled. 
+```
+export OMP_PLACES=cores
+export OMP_PROC_BIND=spread
+```
+  - When `OpenMP` is enabled, the maximum team size allowed is 64 from kokkos,
+    or is determined through input `OpenMP` number of threads, whichever is the
+    smaller value;
+  - SCS particle structure has a default team size of 32, which will be checked
+    against the maximum team size allowed in kokkos. To avoid inconsistency and
+    potential crash, we set:
+```
+export OMP_NUM_THREADS=32
+```
+  - If using Cabana particle structure, we do not explicitly set the team size
+    in XGCm; hence, we do not need to worry about `OMP_NUM_THREADS` from
+    particle structure perspective.
