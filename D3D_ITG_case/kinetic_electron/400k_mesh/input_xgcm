@@ -1,0 +1,136 @@
+&sml_param
+sml_surf_file='g096333.03337.flx.aif_xgcm'
+sml_use_simple00=.false.
+sml_f0_grid=.false.
+sml_pol_decomp=.true.
+sml_f0_grid_alpha=0.0000D0
+sml_special=0             ! 0: normal simulation, 1: single particle simulation
+sml_dt=0.0020D0           ! delta-t for one time step - unit of toroidal transit time. 
+sml_mstep=2000            ! totoal time step
+sml_deltaf=.true.         ! delta-f simulation switch - incomplete
+sml_turb_efield=.true.
+sml_electron_on=.true.
+sml_nphi_total=32
+sml_bounce=0              ! Particle motion boundary condition 
+                          ! 1 for edge simulation (including open field line region)
+                          ! 2 for core simulation (excluding open field line region)
+sml_inpsi=0.00            ! inner boundary of simulation - unit of eq_x_psi
+sml_outpsi=1.10           ! outer boundary of simulation - unit of eq_x_psi
+sml_restart_write_period=1500
+sml_restart=.false.
+sml_deltaf_f0_mode=-2
+sml_guess_table_size=1000
+sml_00_efield=.false.
+sml_00_npsi=500
+sml_input_file_dir='.'
+sml_bd_ext_delta1=-0.1
+sml_bd_ext_delta2=0.01
+sml_bd_ext_delta1H=0.01
+sml_bd_ext_delta2H=0.02
+sml_bd_ext_delta3=0.10
+sml_bd_ext_delta4=0.10
+sml_bounce_zero_weight=1
+sml_rhomax=1.8D-2
+sml_grid_nrho=3
+sml_ncycle_half=30
+sml_poisson_solver_type=0
+sml_dwdt_exb_only=.true.
+sml_initial_deltaf_noise=3D-12
+/
+
+&ptl_param
+ptl_mass_au=2D0           ! 1 for hydrogen, 2 for deutron
+ptl_charge_eu=1D0         ! ion charge
+ptl_num=10000000          ! number of particle for simulation
+ptl_e_mass_au=2D-2
+/
+
+&eq_param ! Initial equilibrium profile - Tanh profile
+eq_filename='d3d096333.eqd'
+!TODO: just add the file name to avoid code not going into the main loop
+eq_den_file='temperature_pf95_mod.prf'
+eq_den_shape=5
+eq_den_v1=4.0D19          ! inside value of density m^-3
+eq_den_v2=2.2D19          ! outside value of density  m^-3
+eq_den_x1=0.975D0         ! pedestal center
+eq_den_x2=0.05D0          ! pedestal width
+eq_den_v3=6.0D19
+eq_den_x3=0D0
+
+eq_tempi_shape=5
+eq_tempe_shape=5
+eq_tempi_file='temperature_pf95_mod.prf'
+eq_tempe_file='temperature_pf95_mod.prf'
+eq_tempi_x1=0.90D0
+eq_tempe_x1=0.96D0
+eq_tempi_x2=0.100D0
+eq_tempe_x2=0.040D0
+eq_tempi_v1=1.5D3         ! ion temperature (inside) - eV
+eq_tempi_v2=7.5d2         ! ion temperature (outside) - eV
+eq_tempe_v1=1.5D3
+eq_tempe_v2=1.0D2
+eq_tempi_v3=4.5D3
+eq_tempi_x3=0D0
+eq_tempe_v3=4.5D3
+eq_tempe_x3=0D0
+/
+
+&col_param  ! Collision
+col_mode=0  ! 0 : off , 1 monte-carlo (non-conserving) 2: monte-carlo (conserving)
+/
+
+&diag_param ! diagnosis
+diag_1d_period=1
+diag_f0_period=50000
+diag_tracer_period=10000
+diag_3d_on=.true.
+diag_3d_period=10
+diag_f3d_period=10000
+/
+
+&neu_param            ! neutral collision
+neu_col_mode=0
+/
+
+&src_param
+/
+
+&f0_param
+/
+
+
+/
+&smooth_param
+smooth_mode_in=0
+smooth_H_mode_in=2
+smooth_H_n_in=1
+smooth_r1_n_in=2
+smooth_r1_d0_in=0.0042
+smooth_r1_type_in=1
+smooth_diag_mode_in=-1
+/
+
+
+&prof_inparam
+/
+
+&mon_param
+/
+&adios_param
+/
+&ptb_3db_param
+/
+&coupling_param
+/
+&cce_phicoupling
+/
+&cce_fcoupling
+/
+&cce_surfaces
+/
+
+&init_cond
+/
+
+&diff_param
+/
