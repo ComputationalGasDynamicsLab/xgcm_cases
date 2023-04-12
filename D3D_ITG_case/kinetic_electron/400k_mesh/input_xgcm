@@ -10,7 +10,7 @@ sml_mstep=2000            ! totoal time step
 sml_deltaf=.true.         ! delta-f simulation switch - incomplete
 sml_turb_efield=.true.
 sml_electron_on=.true.
-sml_nphi_total=32
+sml_nphi_total=64
 sml_bounce=0              ! Particle motion boundary condition 
                           ! 1 for edge simulation (including open field line region)
                           ! 2 for core simulation (excluding open field line region)
