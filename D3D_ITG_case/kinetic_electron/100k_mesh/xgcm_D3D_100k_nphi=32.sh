@@ -16,6 +16,6 @@ module load craype-accel-nvidia80
 module unload darshan
 export SLURM_CPU_BIND="cores"
 
-srun ./XGCm --kokkos-threads=1 100k.osh 100k_4.cpn \
+srun ./XGCm --kokkos-num-threads=1 100k.osh 100k_4.cpn \
 1 1 bfs bfs 1 1 0 3 input_xgcm petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0

@@ -21,7 +21,6 @@ sml_restart=.false.
 sml_deltaf_f0_mode=-2
 sml_guess_table_size=1000
 sml_00_efield=.false.
-sml_00_npsi=500
 sml_input_file_dir='.'
 sml_bd_ext_delta1=-0.1
 sml_bd_ext_delta2=0.01
@@ -36,12 +35,13 @@ sml_ncycle_half=30
 sml_poisson_solver_type=0
 sml_dwdt_exb_only=.true.
 sml_initial_deltaf_noise=3D-12
+sml_00_npsi=500
 /
 
 &ptl_param
 ptl_mass_au=2D0           ! 1 for hydrogen, 2 for deutron
 ptl_charge_eu=1D0         ! ion charge
-ptl_num=25000000          ! number of particle for simulation
+ptl_num=250000000          ! number of particle for simulation
 ptl_e_mass_au=2D-2
 /
 
