@@ -6,7 +6,7 @@ sml_pol_decomp=.true.
 sml_f0_grid_alpha=0.0000D0
 sml_special=0             ! 0: normal simulation, 1: single particle simulation
 sml_dt=0.0020D0           ! delta-t for one time step - unit of toroidal transit time. 
-sml_mstep=500             ! totoal time step
+sml_mstep=1000            ! totoal time step
 sml_deltaf=.true.         ! delta-f simulation switch - incomplete
 sml_turb_efield=.true.
 sml_electron_on=.true.
@@ -41,7 +41,7 @@ sml_00_npsi=500
 &ptl_param
 ptl_mass_au=2D0           ! 1 for hydrogen, 2 for deutron
 ptl_charge_eu=1D0         ! ion charge
-ptl_num=250000000          ! number of particle for simulation
+ptl_num=10000000          ! number of particle for simulation
 ptl_e_mass_au=2D-2
 /
 
@@ -81,6 +81,7 @@ col_mode=0  ! 0 : off , 1 monte-carlo (non-conserving) 2: monte-carlo (conservin
 
 &diag_param ! diagnosis
 diag_1d_period=1
+diag_1d_period=10
 diag_f0_period=50000
 diag_tracer_period=10000
 diag_3d_on=.true.
