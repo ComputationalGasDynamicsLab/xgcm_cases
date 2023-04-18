@@ -16,5 +16,5 @@ module load craype-accel-nvidia80
 export SLURM_CPU_BIND="cores"
 
 srun ./XGCm --kokkos-num-threads=1 400k.osh 400k_4.cpn \
-4 1 bfs bfs 1 1 0 3 input_xgcm petsc petsc_xgcm.rc \
+1 4 bfs bfs 1 1 0 3 input_xgcm petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
