@@ -16,12 +16,13 @@ module load craype-accel-nvidia80
 export KOKKOS_PROFILE_LIBRARY=/global/homes/z/zhangc20/xgcm/kokkos-tools/kp_nvprof_connector.so
 export SLURM_CPU_BIND="cores"
 
+srun --ntasks-per-node 1 dcgmi profile --pause
 srun ncu --target-processes all -f -o XGCm_profile_ncu_%q{SLURM_PROCID} \
 --nvtx --nvtx-include "gyroScatterEFF/" --set full \
 ./XGCm --kokkos-threads=1 590kmesh.osh 590kmesh_6.cpn \
 1 1 bfs bfs 1 0 0 3 input_xgcm_1step petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
-
+srun --ntasks-per-node 1 dcgmi profile --resume
 
 # Belows are used to profile other GPU kernels
 #--nvtx --nvtx-include "gyroScatterEFF/" --set full \
