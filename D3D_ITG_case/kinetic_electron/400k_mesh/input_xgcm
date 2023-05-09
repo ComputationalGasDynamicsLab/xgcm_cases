@@ -6,11 +6,11 @@ sml_pol_decomp=.true.
 sml_f0_grid_alpha=0.0000D0
 sml_special=0             ! 0: normal simulation, 1: single particle simulation
 sml_dt=0.0020D0           ! delta-t for one time step - unit of toroidal transit time. 
-sml_mstep=2000            ! totoal time step
+sml_mstep=100            ! totoal time step
 sml_deltaf=.true.         ! delta-f simulation switch - incomplete
 sml_turb_efield=.true.
 sml_electron_on=.true.
-sml_nphi_total=64
+sml_nphi_total=32
 sml_bounce=0              ! Particle motion boundary condition 
                           ! 1 for edge simulation (including open field line region)
                           ! 2 for core simulation (excluding open field line region)
