@@ -1,23 +1,25 @@
 On Summit, compile with:
  - gcc 11.2.0
- - cuda 10.2.89
- - cmake 3.20.2
+ - cuda 11.7
+ - cmake 3.22.0
 by loading the following modules:
 ```
-module load gcc/11.2.0
-module load cuda/11.5.2
-module load cmake/3.20.2
+module load PrgEnv-gnu
+module load cudatoolkit/11.7
+module load craype-accel-nvidia80
+module load cmake/3.22.0
 ```
 using the following code versions:
 ```
- - kokkos version 3.4.01: https://github.com/kokkos/kokkos
- - omega_h master branch at commit 11eb25d: https://github.com/SCOREC/omega_h
+ - kokkos 3.7.01: https://github.com/kokkos/kokkos
+ - omega_h master branch: https://github.com/SCOREC/omega_h, at commit: 1524449
  - EnGPar master branch: https://github.com/SCOREC/EnGPar, at commit: 57b3f57
- - pumi_pic master branch at commit fea3a38: https://github.com/SCOREC/pumi-pic
- - PETSc version 3.16.2: https://gitlab.com/petsc/petsc
- - XGCm master branch at commit 3c78e45: https://github.com/SCOREC/xgcm 
+ - Cabana 0.5.0: https://github.com/ECP-copa/Cabana
+ - PUMIPic master branch: https://github.com/SCOREC/pumi-pic, at commit: a1cadc0
+ - PETSc 3.16.6: https://gitlab.com/petsc/petsc
+ - XGCm master branch: https://github.com/SCOREC/xgcm at commit: 90dbbe8
 ```
-Refer to [XGCm build scripts](https://github.com/zhangchonglin/XGCm_build_scripts/tree/main/Summit_gcc11.2.0_cuda11.5.2) for detailed build scripts.
+Refer to [XGCm build scripts](https://github.com/zhangchonglin/XGCm_build_scripts/tree/main/Perlmutter/Perlmutter_gcc11.2.0_cuda11.7_kokkos3.7.01) for detailed build scripts.
 
 Case run on 2 or 8 nodes of OLCF Summit system with:
 ```
@@ -27,19 +29,29 @@ Case run on 2 or 8 nodes of OLCF Summit system with:
  - 48 GPUs for case with 6 MPI ranks per group
  - With 48 GPUs, the simulation has less noise due to larger number of particles
 ```
-For 1 MPI rank per group case, run with job submission script:
+It can also be run on 2 or 12 nodes of NERSC Perlmutter system.
+
+For 1 MPI rank per group case, run with either job submission script:
 ```
 - xgcm_cyclone_summit_1rank_per_group.sh
 ```
+or,
+```
+xgcm_cyclone_Perlmutter_1rank_per_group.sh
+```
 
-For 6 MPI ranks per group case, run with job submission script:
+For 6 MPI ranks per group case, run with either job submission script:
 ```
 - xgcm_cyclone_summit_6ranks_per_group.sh
+```
+or,
+```
+xgcm_cyclone_Perlmutter_6ranks_per_group.sh
 ```
 
 ### Note for running with AmgX through AmgXWrapper and PETSc:
 Currently when run with `PETSc 3.15.2` or `PETSc 3.16.6`, the simulation is
- working fine. However, it requires specific types of `PETSc` vector and matrix type:
+ working fine. However, it requires specific types of `PETSc` vector and matrix:
   - `-dm_vec_type cuda` or `-dm_vec_type mpicuda`;
   - and `-dm_mat_type aij` or `-dm_mat_type mpiaij`.
 
