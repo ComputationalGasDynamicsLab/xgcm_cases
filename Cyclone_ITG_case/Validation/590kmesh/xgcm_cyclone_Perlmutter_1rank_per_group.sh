@@ -22,3 +22,6 @@ ulimit -c unlimited
 srun ./XGCm 590kmesh.osh 590kmesh_6.cpn \
 1 1 bfs bfs 1 0 0 3 input_xgcm petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
+
+# Note: OpenMP related environment variables are not used in the simulation if we do not enable OpenMP in Kokkos.
+# Usually OpenMP is not enable in XGCm simulation. It is just put here for testing enabling OpenMP for a different purpose.
