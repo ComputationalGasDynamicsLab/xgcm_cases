@@ -20,7 +20,7 @@ module load cmake/3.22.0
 Note:
 
 - `module load craype-accel-nvidia80` is just to be able to use the `GPU-aware MPI` later: https://docs.nersc.gov/systems/perlmutter/#gpu-aware-mpi.
-
+- `xgcm_cyclone_Perlmutter_submission_ncu_nvtx.sh` is the better script to be used to profile GPU kernels using nsight-compute.
 
 Case run on 2 node of NERSC Perlmutter system:
  - 8 GPUs used

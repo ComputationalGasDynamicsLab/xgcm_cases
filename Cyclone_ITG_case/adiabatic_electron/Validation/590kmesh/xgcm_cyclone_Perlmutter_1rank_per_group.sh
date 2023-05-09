@@ -23,6 +23,8 @@ srun ./XGCm 590kmesh.osh 590kmesh_6.cpn \
 1 1 bfs bfs 1 0 0 3 input_xgcm petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
 
-# Note: to be able to view PETSc time log for GPU computation, need to add
+# Note (1): to be able to view PETSc time log for GPU computation, need to add
 # "-log_view_gpu_time"; this will however results in a 10-20% increase in
 # overallPETSc solve time
+# Note (2): OpenMP related environment variables are not used in the simulation if we do not enable OpenMP in Kokkos.
+# Usually OpenMP is not enable in XGCm simulation. It is just put here for testing enabling OpenMP for a different purpose.
