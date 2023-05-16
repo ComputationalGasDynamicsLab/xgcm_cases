@@ -6,8 +6,7 @@
 #BSUB -o Cyclone-590k.%J
 #BSUB -e Cyclone-590k.%J
 
-module load gcc/11.2.0
-module load cuda/11.5.2
+module load cuda/11.7.1
 
 date
 jsrun -n 8 -a 1 -c 1 -g 1 --smpiargs "-gpu" \
