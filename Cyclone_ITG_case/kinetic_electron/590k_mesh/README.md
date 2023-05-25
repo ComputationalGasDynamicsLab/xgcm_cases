@@ -28,6 +28,8 @@ Case run on 4 or 16 nodes of NERSC Perlmutter system with:
  - 16 GPUs for case with 1 MPI rank per group
  - 64 GPUs for case with 4 MPI ranks per group
  - With 64 GPUs, the simulation has less noise due to larger number of particles
+ - When the job is run on Summit, need to use smaller number of particles per GPU
+   (for example, 5 million ions and 5 million electrons), to avoid out-of-memory issue
 ```
 For 1 MPI rank per group case, run with job submission script:
 ```
