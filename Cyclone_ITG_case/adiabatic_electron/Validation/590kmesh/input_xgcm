@@ -152,3 +152,13 @@ smooth_diag_mode_in=-1
 /
 &cce_surfaces
 /
+
+&init_cond
+ic_resonant_modes=.false.
+ic_radial_gaussian=.true.
+ic_n_modes=1
+ic_delta_n=24
+ic_amp=2d-13
+ic_sigma_psi=.075
+ic_psi_0=.38
+/
