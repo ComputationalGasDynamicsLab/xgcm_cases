@@ -92,6 +92,7 @@ diag_1d_period=10
 diag_f0_period=500
 diag_tracer_period=10000
 diag_3d_on=.true.
+diag_3d_period=10
 /
 
 &neu_param            ! neutral collision

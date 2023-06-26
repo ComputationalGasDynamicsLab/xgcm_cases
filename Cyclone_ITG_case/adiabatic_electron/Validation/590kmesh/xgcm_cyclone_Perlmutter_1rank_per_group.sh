@@ -20,7 +20,7 @@ export OMP_NUM_THREADS=32
 ulimit -c unlimited
 
 srun ./XGCm 590kmesh.osh 590kmesh_6.cpn \
-1 1 bfs bfs 1 0 0 3 input_xgcm petsc petsc_xgcm.rc \
+1 1 bfs bfs 1 1 0 3 input_xgcm petsc petsc_xgcm.rc \
 -use_gpu_aware_mpi 0
 
 # Note (1): to be able to view PETSc time log for GPU computation, need to add
