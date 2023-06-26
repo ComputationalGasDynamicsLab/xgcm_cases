@@ -9,7 +9,7 @@ sml_f0_grid_alpha=0.0000D0
 sml_co_cur_bt=.true.
 sml_special=0             ! 0: normal simulation, 1: single particle simulation
 sml_dt=0.005D0            ! delta-t for one time step - unit of toroidal transit time.
-sml_mstep=200              ! total time step
+sml_mstep=200             ! total time step
 sml_deltaf=.true.         ! delta-f simulation switch - incomplete
 sml_turb_efield=.true.
 sml_electron_on=.false.
@@ -43,6 +43,7 @@ sml_no_fp_in_f=.false.
 sml_poisson_solver_type=0
 sml_dwdt_exb_only=.true.
 sml_initial_deltaf_noise=0D-150
+sml_field_aligned_initial=.true.
 
 sml_grad_psitheta=.true.
 /
@@ -51,7 +52,6 @@ sml_grad_psitheta=.true.
 ptl_mass_au=2D0             ! 1 for hydrogen, 2 for deutron
 ptl_charge_eu=1D0            ! ion charge
 ptl_num=20000000             ! number of particle for simulation
-ptl_maxnum=960000
 /
 
 
@@ -158,7 +158,7 @@ ic_resonant_modes=.false.
 ic_radial_gaussian=.true.
 ic_n_modes=1
 ic_delta_n=24
-ic_amp=2d-13
-ic_sigma_psi=.075
-ic_psi_0=.38
+ic_amp=2.0D-13
+ic_sigma_psi=0.075
+ic_psi_0=0.38
 /
