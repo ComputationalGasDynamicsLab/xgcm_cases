@@ -1,12 +1,12 @@
 #!/bin/bash
-#BSUB -P PHY122
+#BSUB -P FUS157
 #BSUB -W 2:00
 #BSUB -nnodes 2
 #BSUB -J Cyclone-590k
 #BSUB -o Cyclone-590k.%J
 #BSUB -e Cyclone-590k.%J
 
-module load gcc/11.2.0
+module load gcc/12.1.0
 module load cuda/11.7.1
 
 date
