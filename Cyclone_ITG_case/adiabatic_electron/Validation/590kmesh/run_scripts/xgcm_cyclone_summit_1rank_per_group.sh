@@ -7,12 +7,12 @@
 #BSUB -e Cyclone-590k.%J
 
 module load gcc/12.1.0
-module load cuda/11.7.1
+module load cuda/12.2.0
 
 date
 jsrun -n 8 -a 1 -c 1 -g 1 --smpiargs "-gpu" \
 ./XGCm --kokkos-num-threads=1 590kmesh.osh 590kmesh_6.cpn \
-1 1 bfs bfs 1 1 0 3 input_xgcm petsc petsc_xgcm.rc \
+1 1 bfs bfs 1 1 0 3 input_xgcm petsc petsc_xgcm_cpu.rc \
 -use_gpu_aware_mpi 0
 date
 
