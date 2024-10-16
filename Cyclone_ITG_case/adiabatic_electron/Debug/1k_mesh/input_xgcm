@@ -14,7 +14,7 @@ sml_mstep=100              ! total time step
 sml_deltaf=.true.        ! delta-f simulation switch - incomplete
 sml_turb_efield=.true.
 sml_electron_on=.false.
-sml_nphi_total=1
+sml_nphi_total=4
 sml_bounce=3              ! Particle motion boundary condition
                           ! 1 for edge simulation (including open field line region)
                           ! 2 for core simulation (excluding open field line region)
@@ -51,7 +51,7 @@ sml_grad_psitheta=.true.
 &ptl_param
 ptl_mass_au=2D0             ! 1 for hydrogen, 2 for deutron
 ptl_charge_eu=1D0            ! ion charge
-ptl_num=10000000             ! number of particle for simulation
+ptl_num=55000000             ! number of particle for simulation
 ptl_maxnum=600000
 /
 
